@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
     
     ##### READ
+    ###################################################################
     def index_directors
         @list_of_directors = Director.all
         render("/movie_templates/index_directors_template.html.erb")
@@ -29,6 +30,23 @@ class MoviesController < ApplicationController
     def show_movie
         
         render("/movie_templates/show_movie_template.html.erb")
+    end
+    
+    # CREATE
+    #################################################################
+    def new_dir_form
+        render("/movie_templates/new_dir_form.html.erb")
+    end
+    
+    def create_dir
+        p = Director.new
+        p.image_url = params["the_image"]
+        p.name = params["the_name"]
+        p.bio = params["the_bio"]
+        p.dob = params["the_dob"]
+        p.save
+        
+        redirect_to("/directors")
     end
     
 end
