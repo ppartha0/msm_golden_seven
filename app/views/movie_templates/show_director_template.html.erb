@@ -1,1 +1,24 @@
-<h1>Director</h1>
+<h1>Director Details</h1>
+
+<p>
+  <%= @dir.name %>
+</p>
+
+<img src="<%= @dir.image_url %>">
+<p>Bio: <%= @dir.bio %></p>
+<p>Date of birth: <%= @dir.dob %></p>
+<p>
+  <%= time_ago_in_words(@dir.created_at) %> ago
+</p>
+
+<a href="/directors" class="btn btn-default">
+  Go back
+</a>
+
+<a href="/directors/<%= @dir.id %>/edit" class="btn btn-default">
+  Edit
+</a>
+
+<a href="/delete_director/<%= @dir.id %>" class="btn btn-default">
+  Delete
+</a>

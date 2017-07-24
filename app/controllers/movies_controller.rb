@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     end
     
     def show_director
-        
+        @dir = Director.find(params["the_id"])
         render("/movie_templates/show_director_template.html.erb")
     end
     
