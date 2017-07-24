@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
     
     def index_directors
-        @d = Director.all
+        @p = Director.all
         render("/movie_templates/directors_template.html.erb")
     end
     
@@ -9,5 +9,10 @@ class MoviesController < ApplicationController
         
         render("movie_templates/show_director_template.html.erb")
     end
+    
+    def new_dir_form
+        render("movie_templates/new_dir_form_template.html.erb")
+    end
+    
     
 end
