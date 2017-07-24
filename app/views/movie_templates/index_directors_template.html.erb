@@ -1,2 +1,17 @@
 <h1>All directors</h1>
 
+<a href="/directors/new">
+  Add a new director
+</a>
+
+<% @list_of_directors.each do |the_dir| %>
+  <div class="thumbnail">
+    <img src="<%= the_dir.image_url %>">
+
+    <div class="caption">
+         <p>Name: <%= the_dir.name %></p>
+         <p>Bio: <%= the_dir.bio %></p>
+         <p>Date of Birth: <%= the_dir.dob %></p>
+    </div>
+  </div>
+<% end %>

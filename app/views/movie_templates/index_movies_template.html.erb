@@ -1,1 +1,18 @@
 <h1>All movies</h1>
+
+<a href="/movies/new">
+  Add a new movie
+</a>
+
+<% @list_of_movies.each do |the_mov| %>
+  <div class="thumbnail">
+    <img src="<%= the_mov.image_url %>">
+
+    <div class="caption">
+         <p>Title: <%= the_mov.title %></p>
+         <p>Description: <%= the_mov.description %></p>
+         <p>Year Made: <%= the_mov.year %></p>
+         <p>Duration: <%= the_mov.duration %> minutes</p>
+    </div>
+  </div>
+<% end %>

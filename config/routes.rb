@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get("/movies", {:controller => "movies", :action => "index_movies"})
   get("/movies/:the_id", {:controller => "movies", :action => "show_movie"})
   
+  # CREATE
+  
+  
   
   mount WebGit::Engine, at: "/rails/git"
 end

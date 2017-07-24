@@ -1,1 +1,17 @@
 <h1>All actors</h1>
+
+<a href="/actors/new">
+  Add a new actor
+</a>
+
+<% @list_of_actors.each do |the_act| %>
+  <div class="thumbnail">
+    <img src="<%= the_act.image_url %>">
+
+    <div class="caption">
+         <p>Name: <%= the_act.name %></p>
+         <p>Bio: <%= the_act.bio %></p>
+         <p>Date of Birth: <%= the_act.dob %></p>
+    </div>
+  </div>
+<% end %>
