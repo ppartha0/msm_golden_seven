@@ -69,7 +69,8 @@ class MoviesController < ApplicationController
         p.bio = bio
         p.dob = dob
         p.save
-        redirect_to("/directors")
+        filepath = "/directors/" + id.to_s
+        redirect_to(filepath)
         
     end
     
