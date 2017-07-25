@@ -21,6 +21,14 @@ Rails.application.routes.draw do
   get("/movies", {:controller => "movies", :action => "index_movies"})
   get("/movies/:the_id", {:controller => "movies", :action => "show_movie"})
   
+  # UPDATE
+  ################################################################################
+  get("/directors/:some_id/edit", { :controller => "movies", :action => "edit_dir_form" })
+  get("/update_director/:the_id", { :controller => "movies", :action => "update_dir" })
+  
+  # DELETE
+  ################################################################################
+  get("/delete_director/:toast_id", { :controller => "movies", :action => "destroy_director" })
   
   
   

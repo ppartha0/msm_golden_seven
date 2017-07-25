@@ -49,4 +49,37 @@ class MoviesController < ApplicationController
         redirect_to("/directors")
     end
     
+    # UPDATE
+    #################################################################
+    def edit_dir_form
+        @director = Director.find(params["some_id"])
+        render("/movie_templates/edit_dir_form_template.html.erb")
+    end
+    
+    def update_dir
+        img = params["the_image"]
+        name = params["the_name"]
+        bio = params["the_bio"]
+        dob = params["the_dob"]
+        id = params["the_id"]
+        
+        p = Director.find(id)
+        p.image_url = img
+        p.name = name
+        p.bio = bio
+        p.dob = dob
+        p.save
+        redirect_to("/directors")
+        
+    end
+    
+    # DELETE
+    #########################################################
+    def destroy_director
+        did = params["toast_id"]
+        p = Director.find(did)
+        p.destroy
+        redirect_to("/directors")
+    end
+    
 end
