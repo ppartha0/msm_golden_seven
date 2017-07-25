@@ -47,17 +47,26 @@ Rails.application.routes.draw do
   get("/delete_movie/:toast_id", { :controller => "movies", :action => "destroy_movie" })
   
   
-  
-  
-  
-  
-  
   ##############################################################################################
+  
+  # CREATE ACTOR
+  ################################################################################
+  get("/actors/new", { :controller => "actors", :action => "new_act_form" })
+  get("/create_actor", { :controller => "actors", :action => "create_act" })
   
   # READ ACTOR
   #################################################################################
   get("/actors", {:controller => "actors", :action => "index_actors"})
   get("/actors/:the_id", {:controller => "actors", :action => "show_actor"})
+  
+  # UPDATE ACTOR
+  ################################################################################
+  get("/actors/:some_id/edit", { :controller => "actors", :action => "edit_act_form" })
+  get("/update_actor/:the_id", { :controller => "actors", :action => "update_act" })
+  
+  # DELETE ACTOR
+  ################################################################################
+  get("/delete_actor/:toast_id", { :controller => "actors", :action => "destroy_actor" })
   
   mount WebGit::Engine, at: "/rails/git"
 end
