@@ -13,6 +13,20 @@
          <p>Description: <%= the_mov.description %></p>
          <p>Year Made: <%= the_mov.year %></p>
          <p>Duration: <%= the_mov.duration %> minutes</p>
+         <p>Image url: <%= the_mov.image_url %></p>
+         
+         <a href="/movies/<%= the_mov.id %>" class="btn btn-default btn-block">
+          Show details
+        </a>
+
+        <a href="/movies/<%= the_mov.id %>/edit" class="btn btn-default btn-block">
+          Edit movie
+        </a>
+
+        <a href="/delete_movie/<%= the_mov.id %>" class="btn btn-default btn-block">
+          Delete movie
+        </a>
+         
     </div>
   </div>
 <% end %>
